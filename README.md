@@ -1,5 +1,5 @@
 # Magicord
-*An Open source discord bot with multiple features written in JS
+*An Open source discord bot with multiple features written in JS*
 
 
 
