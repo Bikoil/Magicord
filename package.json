@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/bikoil/Magicord/issues"
   },
-  "homepage": "https://github.com/bikoil/Magicord#readme"
+  "homepage": "https://github.com/bikoil/Magicord#readme",
+  "dependencies": {
+    "discord.js": "^14.14.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.2.0"
+  }
 }
