@@ -1,0 +1,19 @@
+{
+  "name": "magicord",
+  "version": "1.0.0",
+  "description": "An Open source discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "console.log(\"Hello world\");"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bikoil/Magicord.git"
+  },
+  "author": "Biko",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/bikoil/Magicord/issues"
+  },
+  "homepage": "https://github.com/bikoil/Magicord#readme"
+}
