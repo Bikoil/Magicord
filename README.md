@@ -17,7 +17,7 @@
 - Configuration to your liking 
 - Edit the bot's code to your liking! (Need js knowledge)
 
-__NOTE THAT SOME OF THESE FEATURES HAVE NOT BEEN IMPLEMENTED YET__
+__NOTE THAT MOST OF THESE FEATURES HAVE NOT BEEN IMPLEMENTED YET__
 
 *Original dev team that made this: !!Cords!!, this dev team is not public yet*
 
