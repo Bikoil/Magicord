@@ -1,3 +1,11 @@
+`~~~~~~~~`
+
+
+<img src="https://github.com/Bikoil/Magicord/assets/139659047/a03b7e72-bba5-4a68-9dc8-ada44bef49bf" alt="alt text" width="68px">
+
+
+`~~~~~~~~`
+
 # Magicord
 *An Open source discord bot with multiple features written in JS*
 
