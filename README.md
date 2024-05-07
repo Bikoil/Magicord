@@ -9,7 +9,7 @@
 
 
 # What is Magicord?
-- Magicord used to be a bot primarily hosted on [Botghost](https://botghost.com) but since it was unreliable and had limitations, I decided to move it to github, everything is still being moved so not everything has been added here.
+- Magicord used to be a bot primarily hosted on [Botghost](https://botghost.com) but since it was unreliable and had limitations, I decided to move it to [Discord.js](https://discord.js.org), everything is still being moved so not everything has been added here.
 # Features
 - Modern reaction roles
 - Setup applications as an alternative to goole forms
