@@ -1,22 +1,16 @@
-`~~~~~~~~`
+![Static Badge](https://img.shields.io/badge/Discord.js-Bot-Bot?style=for-the-badge) ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/w/Bikoil/Magicord/main?style=for-the-badge)  ![Static Badge](https://img.shields.io/badge/WorkInProgress-JS?style=for-the-badge)
 
 
 
-<img src="https://github.com/Bikoil/Magicord/assets/139659047/a03b7e72-bba5-4a68-9dc8-ada44bef49bf" alt="alt text" width="68px">
-
-
-
-
-`~~~~~~~~`
 
 # Magicord
 *An Open source discord bot with multiple features written in JS*
 
-
+<img src="https://github.com/Bikoil/Magicord/assets/139659047/a03b7e72-bba5-4a68-9dc8-ada44bef49bf" alt="alt text" width="100px">
 
 
 ***
-
+***
 
 
 # What is Magicord?
