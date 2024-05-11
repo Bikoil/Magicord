@@ -1,11 +1,22 @@
+<p align="center">
 <img src="https://github.com/Bikoil/Magicord/assets/139659047/a03b7e72-bba5-4a68-9dc8-ada44bef49bf" alt="alt text" width="100px">
+</p>
+<h1 align="center">
+  Magicord
+</h1>
+<div align="center">
+<em> An Open Source Discord Bot Written in JavaScript </em>
+</div>
+  
+<p align="center">
+<img src="https://img.shields.io/badge/Discord.js-Bot-Bot?style=for-the-badge"> 
+<img src="https://img.shields.io/github/commit-activity/w/Bikoil/Magicord/main?style=for-the-badge">  
+<img src="https://img.shields.io/badge/WorkInProgress-JS?style=for-the-badge">
+
+</p>
 
 
 
-# Magicord
-*An Open source discord bot with multiple features written in JS*
-
-![Static Badge](https://img.shields.io/badge/Discord.js-Bot-Bot?style=for-the-badge) ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/w/Bikoil/Magicord/main?style=for-the-badge)  ![Static Badge](https://img.shields.io/badge/WorkInProgress-JS?style=for-the-badge)
 
 
 
