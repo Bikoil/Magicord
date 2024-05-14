@@ -120,6 +120,8 @@ sudo pkg install node
 > This part of the guide needs YOUR Help in adjusting since most of this OS's were not experimented when installing the packages, if there is any mistake within this part, please open a pull request/issue correcting it, the tested OS's are
 > - Arch Linux
 > - Debian
+>
+>
 > I would heavily appreciate your corrections on this part, thank you
 
 
