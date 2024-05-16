@@ -19,6 +19,7 @@ module.exports = {
         }
 
         // User has BAN_MEMBERS permissions, proceed with the command execution
+        // Make sure you are causious while editing the permissions.
         const user = interaction.options.getMember('user');
         const reason = interaction.options.getString('reason') || 'No reason provided';
 
