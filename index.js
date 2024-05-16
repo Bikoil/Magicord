@@ -48,9 +48,9 @@ client.on(Events.InteractionCreate, async interaction => {
 	} catch (error) {
 		console.error(error);
 		if (interaction.replied || interaction.deferred) {
-			await interaction.followUp({ content: 'There was an error while executing this command!', ephemeral: true });
+			await interaction.followUp({ content: 'An error has occured while running this command, this seems like an issue with the command file, if you see this, please open an issue [here](https://github.com/bikoil/magicord/issues/)', ephemeral: true });
 		} else {
-			await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+			await interaction.reply({ content: 'An error has occured while running this command, this seems like an issue with the command file, if you see this, please open an issue [here](https://github.com/bikoil/magicord/issues/)', ephemeral: true });
 		}
 	}
 	console.log(interaction);
