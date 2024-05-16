@@ -55,4 +55,10 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 	console.log(interaction);
 });
+
+
+
+
+
+
 //I uhh I forgor :3

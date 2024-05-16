@@ -35,11 +35,13 @@
 
 __NOTE THAT MOST OF THESE FEATURES HAVE NOT BEEN IMPLEMENTED YET__
 
+// To add the bot, [here]( https://discord.com/api/oauth2/authorize?client_id=1138504372817506344&permissions=8&scope=bot) //s
+
 ***
 
 # How to setup the bot
 > [!IMPORTANT]  
-> Before setting up the bot, you must have at least some javascript skill or are familliar with the language, do not open issues on learning javascript or "where do i begin from", please look at [Discord.js guide](https://discordjs.guide) for more information about discord.js, you may also learn javascript at the[JavaScript website](https://www.javascript.com/), Also, you may need to have some knowledge about the terminal and how to use it including bash and other shells.
+> Before setting up the bot, you must have at least some javascript skill or are familliar with the language, do not open issues on learning javascript or "where do i begin from", please look at [Discord.js guide](https://discordjs.guide) for more information about discord.js, you may also learn javascript at the [JavaScript website](https://www.javascript.com/), Also, you may need to have some knowledge about the terminal and how to use it including bash and other shells.
 > Please also Keep in mind this bot is not complete at all, and is still being worked on.
 
 
