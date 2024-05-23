@@ -1,4 +1,4 @@
-// Checks if the bot is online
+// CHecks if the bot is online 
 const { SlashCommandBuilder } = require('discord.js');
 const os = require('os');
 const fs = require('fs');
@@ -31,6 +31,16 @@ function getAndroidVersion() {
     }
 }
 
+// Function to get Windows version
+function getWindowsVersion() {
+    try {
+        const version = execSync('ver', { encoding: 'utf8' }).trim();
+        return version;
+    } catch (err) {
+        return 'Unknown Windows';
+    }
+}
+
 // Function to get system details
 function getSystemDetails() {
     const platform = os.platform();
@@ -39,6 +49,8 @@ function getSystemDetails() {
         systemDetails = getLinuxDistro();
     } else if (platform === 'android') {
         systemDetails = getAndroidVersion();
+    } else if (platform === 'win32') {
+        systemDetails = getWindowsVersion();
     } else {
         systemDetails = platform;
     }
