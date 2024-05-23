@@ -1,4 +1,4 @@
-// CHecks if the bot is online 
+// Checks if the bot is online 
 const { SlashCommandBuilder } = require('discord.js');
 const os = require('os');
 const fs = require('fs');
