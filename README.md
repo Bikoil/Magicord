@@ -35,7 +35,7 @@
 
 __NOTE THAT MOST OF THESE FEATURES HAVE NOT BEEN IMPLEMENTED YET__
 
-// To add the bot, [here]( https://discord.com/api/oauth2/authorize?client_id=1138504372817506344&permissions=8&scope=bot) //s
+// To add the bot, click [here]( https://discord.com/api/oauth2/authorize?client_id=1138504372817506344&permissions=8&scope=bot) //
 
 ***
 
