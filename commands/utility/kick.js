@@ -6,7 +6,7 @@ module.exports = {
         .setDescription('Kick a user from the server')
         .addUserOption(option =>
             option.setName('user')
-                .setDescription('The user you want to kivk')
+                .setDescription('The user you want to kick')
                 .setRequired(true))
         .addStringOption(option =>
             option.setName('reason')
@@ -33,7 +33,7 @@ module.exports = {
 
         // Respond with confirmation embed
         const embed = {
-            color: e04700,
+            color: 0xe04700,
             title: '<:kick:1130774030291587162> USER KICK <:kick:1130774030291587162>',
             description: `${user.user.tag} has been kicked from the server.`,
             fields: [
