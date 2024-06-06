@@ -2,3 +2,4 @@ config.json
 .env
 nohup.out
 colortest.css
+minikube-linux-amd64
