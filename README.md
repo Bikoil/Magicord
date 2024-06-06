@@ -30,8 +30,9 @@
 - Modern reaction roles
 - Setup applications as an alternative to google forms
 - Safety system against raids
-- Configuration to your liking 
+- Configuration to your liking
 - Edit the bot's code to your liking! (Need js knowledge)
+- Silly commands (cuz why not)
 
 __NOTE THAT MOST OF THESE FEATURES HAVE NOT BEEN IMPLEMENTED YET__
 
