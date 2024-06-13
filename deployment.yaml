@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: magicord-bot
-        image: your_dockerhub_username/magicord-bot:latest
+        image: bikoil/magicord-bot:latest
         ports:
         - containerPort: 3000
         env:
