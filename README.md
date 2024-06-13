@@ -65,11 +65,9 @@ Another thing you will have to install is npm (Node Package Manager) for JS, or 
 to install git on windows you can either run this in command prompt
 
 ```bash
-winget install git
+ winget install --id Git.Git -e --source winget 
 # to install npm
-winget install npm
-# if npm doesnt work install node
-winget install node
+winget install -e --id OpenJS.NodeJS
 ```
 
 or by installing it from [The official git website](https://git-scm.com/)
@@ -80,21 +78,19 @@ or by installing it from [The official git website](https://git-scm.com/)
 ```bash
 sudo apt install git
 # to install npm
-sudo apt install node
+sudo apt install npm
 ```
 - **Arch Linux**
 ```bash
 sudo pacman -S git
 # to install npm
-sudo pacman -S node npm
+sudo pacman -S npm
 ```
 - **Fedora**
 ```bash
 sudo dnf install git
 # to install npm
-sudo dnf install npm
-# if that doesnt work
-sudo dnf install node
+sudo dnf install git nodejs 
 ```
 
 If you are using any other distro, you should be able to do it on your own
@@ -107,8 +103,6 @@ Firstly, install [Homebrew](https://brew.sh/) if you haven't yet
 ```bash
 brew install git
 # to install npm
-brew install npm
-# if it doesnt work
 brew install node
 ```
 
@@ -116,14 +110,13 @@ brew install node
 ```bash
 sudo pkg install git
 # to install npm
-sudo pkg install npm
-# if that doesnt work
 sudo pkg install node
 ```
 > [!IMPORTANT]
 > This part of the guide needs YOUR Help in adjusting since most of this OS's were not experimented when installing the packages, if there is any mistake within this part, please open a pull request/issue correcting it, the tested OS's are
 > - Arch Linux
 > - Debian
+> - Fedora
 >
 >
 > I would heavily appreciate your corrections on this part, thank you
@@ -134,7 +127,7 @@ sudo pkg install node
 With git installed now its time to clone the repository
 
 ```bash
-git clone https://github.com/bikoil/Magicord
+git clone https://github.com/Bikoil/Magicord
 ```
 
 If you forked the repository, then you should do the following instead
@@ -142,6 +135,14 @@ If you forked the repository, then you should do the following instead
 ```bash
 git clone https://github.com/<YourUsername>/<YourMagicordForkName>
 ```
+> WARNING: THIS PART BELOW IS NOT RECOMMENDED.
+_If you want to use the latest version of Magicord with the latest changes_
+
+```bash
+git clone -b Magicord-RollRelease https://github.com/Bikoil/Magicord
+```
+> ONLY DO THIS IF YOU KNOW WHAT YOU ARE DOING.
+
 
 Now, your bot repository is setup in your device, you are missing 2 more steps before the bot is setup
 
@@ -192,6 +193,62 @@ node index.js
 ```
 
 And viola! your bot is online, now you can go ahead and customize it all you want
+
+# Running through Docker And Kubernetes
+> [!IMPORTANT]
+> This guide is for running magicord through kubernetes locally using minikube, this guide is not for beginners, and is only guided for linux users for now (sorry Windows/Mac/BSD users) since it was operated in Arch Linux
+
+- **Dependencies to installed**
+```bash
+# on Arch
+sudo pacman -S minikube kubectl docker
+# on Debian
+sudo apt install docker 
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube # For minikube
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" # For kubectl
+```
+
+- Firstly build the docker image
+
+```bash
+docker build -t magicord:latest . # Make sure you are in the magicord directory
+```
+
+- Then start minikube
+
+```bash
+minikube start
+```
+> If this operation fails, do the following
+> `sudo usermod -aG docker $USER && newgrp docker`
+> Do not close the terminal after this, if you want this to be permanent then log off then login
+
+- Use minikube's Docker daemon
+
+```bash
+eval $(minikube -p minikube docker-env)
+```
+
+- Edit the deployment.yaml at line 17, instead of `bikoil`, enter your docker username, then log into docker in terminal
+
+```bash
+docker login
+```
+
+- Apply Deployment and Service
+
+```bash
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+```
+- Access the bot
+
+```bash
+minikube service magicord-service --url
+```
+
+And there you go! your bot should be online, to stop it, do `minikube stop`
 
 > Please remember, if there are any issues in the guide, please open a pull request/issue, i would really appreciate your help, so thank you.
 
