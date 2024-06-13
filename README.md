@@ -22,6 +22,16 @@
 
 ***
 ***
+<div  align="center">
+  <h3>
+    <em>
+      Unstable Dev Branch
+    </em>
+  </h1>
+  <em>
+  This is a development branch for Magicord, this has more changes and updates, and they maybe broken or missing additions, I dont recommend using this as the base for your bot
+  </em>
+</div>
 
 
 # What is Magicord?
