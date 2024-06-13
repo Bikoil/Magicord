@@ -250,6 +250,15 @@ minikube service magicord-service --url
 
 And there you go! your bot should be online, to stop it, do `minikube stop`
 
+After you are done with all of the setting up you can optionaly run the BASH script in the repository to start the bot with `StartMagicordKubernetes`
+
+- To set the script up, run
+
+```bash
+sudo chmod +x StartMagicordKubernetes
+./StartMagicordKubernetes
+```
+
 > Please remember, if there are any issues in the guide, please open a pull request/issue, i would really appreciate your help, so thank you.
 
 
