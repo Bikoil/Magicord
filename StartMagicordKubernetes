@@ -7,8 +7,8 @@ eval $(minikube docker-env)
 
 
 # Apply Kubernetes deployment and service (replace with your actual YAML file names)
-kubectl apply -f bot-deployment.yaml
-kubectl apply -f bot-service.yaml
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
 
 # Get logs to monitor bot (optional)
 kubectl logs -f $(kubectl get pods --selector=app=discord-bot -o jsonpath='{.items[0].metadata.name}')
