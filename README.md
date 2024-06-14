@@ -194,11 +194,11 @@ node index.js
 
 And viola! your bot is online, now you can go ahead and customize it all you want
 
-# Running through Docker And Kubernetes
+# Running through Docker and Kubernetes
 > [!IMPORTANT]
 > This guide is for running magicord through kubernetes locally using minikube, this guide is not for beginners, and is only guided for linux users for now (sorry Windows/Mac/BSD users) since it was operated in Arch Linux
 
-- **Dependencies to installed**
+- **Dependencies to be installed**
 ```bash
 # on Arch
 sudo pacman -S minikube kubectl docker
