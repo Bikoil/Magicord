@@ -1,4 +1,3 @@
-// Checks if the bot is online 
 const { SlashCommandBuilder } = require('discord.js');
 const os = require('os');
 const fs = require('fs');
@@ -41,6 +40,16 @@ function getWindowsVersion() {
     }
 }
 
+// Function to check if running in Docker
+function isDocker() {
+    return fs.existsSync('/.dockerenv');
+}
+
+// Function to check if running in Kubernetes
+function isKubernetes() {
+    return process.env.KUBERNETES_SERVICE_HOST !== undefined;
+}
+
 // Function to get system details
 function getSystemDetails() {
     const platform = os.platform();
@@ -54,6 +63,15 @@ function getSystemDetails() {
     } else {
         systemDetails = platform;
     }
+
+    // Check for Docker and Kubernetes
+    if (isDocker()) {
+        systemDetails += ' (Docker)';
+    }
+    if (isKubernetes()) {
+        systemDetails += ' (Kubernetes)';
+    }
+
     return systemDetails;
 }
 
@@ -81,6 +99,16 @@ module.exports = {
         const cpuUsage = getCpuUsage().toFixed(2);
         const memoryUsage = getMemoryUsage().toFixed(2);
 
-        await interaction.reply(`# The Bot Is Online!\n> Server is set up! The bot is up and running using \`node index.js\` currently running on ${system}\n> CPU Usage: ${cpuUsage}%\n> Memory Usage: ${memoryUsage}%`);
+        let message = `# The Bot Is Online!\n> Server is set up! The bot is up and running using \`node index.js\` currently running on ${system}\n> CPU Usage: ${cpuUsage}%\n> Memory Usage: ${memoryUsage}%`;
+        
+        if (isDocker()) {
+            message = `# The Bot Is Online!\n> Server is set up! The bot is up and running in a Docker container currently running on ${system}\n> CPU Usage: ${cpuUsage}%\n> Memory Usage: ${memoryUsage}%`;
+        }
+
+        if (isKubernetes()) {
+            message = `# The Bot Is Online!\n> Server is set up! The bot is up and running in a Kubernetes pod currently running on ${system}\n> CPU Usage: ${cpuUsage}%\n> Memory Usage: ${memoryUsage}%`;
+        }
+
+        await interaction.reply(message);
     },
 };
