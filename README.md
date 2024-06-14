@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/Bikoil/Magicord/assets/139659047/a03b7e72-bba5-4a68-9dc8-ada44bef49bf" alt="alt text" width="100px">
+<img src="https://github.com/Bikoil/Magicord/blob/main/Magicord.png" width="100px">
 </p>
 <h1 align="center">
   Magicord
