@@ -65,7 +65,7 @@ Another thing you will have to install is npm (Node Package Manager) for JS, or 
 to install git on windows you can either run this in command prompt
 
 ```bash
- winget install --id Git.Git -e --source winget 
+winget install --id Git.Git -e --source winget 
 # to install npm
 winget install -e --id OpenJS.NodeJS
 ```
