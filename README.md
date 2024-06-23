@@ -183,6 +183,11 @@ After this, you are all set! you just need to do the following to run the ot and
 cd <TheBotFolderName>
 ```
 
+- You will need to install the `discord.js` package from npm
+```bash
+npm install discors.js
+```
+
 - and finally run
 ```bash
 node deploy-commands.js
