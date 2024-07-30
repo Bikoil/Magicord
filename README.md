@@ -151,12 +151,12 @@ Now, your bot repository is setup in your device, you are missing 2 more steps b
 > [!IMPORTANT]
 > NEVER ever give your bot token to absolutely ANYONE, giving your bot token to anyone or leaking it can cause **catostrophic events** to your bot and the servers it is inside, leaking it essentially gives the person access to the bot and do absolutely anything you want, this is fully YOUR responsibility and you should take care of it.
 
-Now, you can either keep going with the terminal to setup everything if you are used to the terminal, you will have to make 2 files in the bot folder
+Now, you can either keep going with the terminal to setup everything if you are used to the terminal, you will have to make a file in the bot folder
 
 - Go to your bot folder
-- Make 2 files named `.env` and `config.json`
+- Make a file named `config.json`
 > [!IMPORTANT]
-> If you are hosting your bot on a public git platform (like github or gitlab) then DO NOT delete the `.gitignore` file as it prevents your token from being leaked and stops config.json and .env from appearing on the public git repository
+> If you are hosting your bot on a public git platform (like github or gitlab) then DO NOT delete the `.gitignore` file as it prevents your token from being leaked and stops config.json from appearing on the public git repository
 
 - Copy this to the `config.json`
 ```json
