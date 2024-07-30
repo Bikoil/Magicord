@@ -102,7 +102,7 @@ export class AppDiscord {
         const cpuUsage = getCpuUsage().toFixed(2);
         const memoryUsage = getMemoryUsage().toFixed(2);
 
-        let message = `# The Bot Is Online!\n> Server is set up! The bot is up and running using \`node index.js\` currently running on ${system}\n> CPU Usage: ${cpuUsage}%\n> Memory Usage: ${memoryUsage}%`;
+        let message = `# The Bot Is Online!\n> Server is set up! The bot is up and running using \`npm run start\` currently running on ${system}\n> CPU Usage: ${cpuUsage}%\n> Memory Usage: ${memoryUsage}%`;
         
         if (isDocker()) {
             message = `# The Bot Is Online!\n> Server is set up! The bot is up and running in a Docker container currently running on ${system}\n> CPU Usage: ${cpuUsage}%\n> Memory Usage: ${memoryUsage}%`;
