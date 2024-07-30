@@ -1,17 +1,36 @@
-# Use Node.js as base image
-FROM node:16
+## build runner
+FROM node:lts-alpine as build-runner
 
-# Set working directory
-WORKDIR /app
+# Set temp directory
+WORKDIR /tmp/app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+# Move package.json
+COPY package.json .
 
 # Install dependencies
 RUN npm install
 
-# Copy the rest of your application
-COPY . .
+# Move source files
+COPY src ./src
+COPY tsconfig.json   .
 
-# Define the command to run your bot
-CMD ["node", "index.js"]
+# Build project
+RUN npm run build
+
+## production runner
+FROM node:lts-alpine as prod-runner
+
+# Set work directory
+WORKDIR /app
+
+# Copy package.json from build-runner
+COPY --from=build-runner /tmp/app/package.json /app/package.json
+
+# Install dependencies
+RUN npm install --omit=dev
+
+# Move build files
+COPY --from=build-runner /tmp/app/build /app/build
+
+# Start bot
+CMD [ "npm", "run", "start" ]
