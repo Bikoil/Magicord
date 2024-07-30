@@ -11,7 +11,7 @@ export class MyDiscordBot {
         @SlashOption({
             name: 'title',
             description: 'The title of the embed',
-            type: ApplicationCommandOptionType.String,  // Corrected type
+            type: ApplicationCommandOptionType.String,  
             required: false,
         })
         title: string | null,
@@ -19,14 +19,14 @@ export class MyDiscordBot {
         @SlashOption({
             name: 'body',
             description: 'The body of the embed',
-            type: ApplicationCommandOptionType.String,  // Corrected type
+            type: ApplicationCommandOptionType.String,  
         })
         body: string,
 
         @SlashOption({
             name: 'footer',
             description: 'The footer of the embed',
-            type: ApplicationCommandOptionType.String,  // Corrected type
+            type: ApplicationCommandOptionType.String,  
             required: false,
         })
         footer: string | null,
