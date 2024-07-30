@@ -1,6 +1,6 @@
 import { dirname, importx } from "@discordx/importer";
 import type { Interaction, Message } from "discord.js";
-import { IntentsBitField } from "discord.js";
+import { IntentsBitField, ActivityType } from "discord.js"; // Import ActivityType
 import { Client } from "discordx";
 
 export const bot = new Client({
@@ -25,12 +25,17 @@ export const bot = new Client({
   },
 });
 
-bot.once("ready", () => {
+bot.once("ready", async () => {
   // Make sure all guilds are cached
   // await bot.guilds.fetch();
 
   // Synchronize applications commands with Discord
   void bot.initApplicationCommands();
+
+  // Set the status of the bot
+  if (bot.user) {
+    bot.user.setActivity('How to cast spells (FULL TUTORIAL)', { type: ActivityType.Watching });
+  }
 
   // To clear all guild commands, uncomment this line,
   // This is useful when moving from guild commands to global commands
@@ -63,7 +68,6 @@ async function run() {
   if (!process.env.BOT_TOKEN) {
     throw Error("Could not find BOT_TOKEN in your environment");
   }
-
   // Log in with your bot token
   await bot.login(process.env.BOT_TOKEN);
 }
