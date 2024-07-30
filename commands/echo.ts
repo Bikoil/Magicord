@@ -11,7 +11,7 @@ export class EchoCommand {
     async echo(
         @SlashOption({
             name: 'message',
-            type: ApplicationCommandOptionType.String, // Correct type value
+            type: ApplicationCommandOptionType.String, 
             description: 'The message you want the bot to say',
             required: true,
         }) message: string,

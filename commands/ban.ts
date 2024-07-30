@@ -10,13 +10,13 @@ export class BanCommand {
     async ban(
         @SlashOption({
             name: 'user',
-            type: ApplicationCommandOptionType.User, // Corrected type
+            type: ApplicationCommandOptionType.User, 
             description: 'The user you want to ban',
             required: true,
         }) user: GuildMember,
         @SlashOption({
             name: 'reason',
-            type: ApplicationCommandOptionType.String, // Corrected type
+            type: ApplicationCommandOptionType.String, 
             description: 'The reason for banning the user',
             required: false,
         }) reason: string | null,
