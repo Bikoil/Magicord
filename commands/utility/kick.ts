@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 
-module.exports = {
+export default {
     data: new SlashCommandBuilder()
         .setName('kick')
         .setDescription('Kick a user from the server')

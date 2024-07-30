@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 
-module.exports = {
+export default {
     data: new SlashCommandBuilder()
         .setName('embedmsg')
         .setDescription('Make the bot send an embed message')

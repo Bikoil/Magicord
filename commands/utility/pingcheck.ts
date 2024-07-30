@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
-const os = require('os');
-const fs = require('fs');
+import os from 'os';
+import fs from 'fs';
 const { execSync } = require('child_process');
 
 // Function to get Linux distribution
@@ -90,7 +90,7 @@ function getMemoryUsage() {
     return ((totalMem - freeMem) / totalMem) * 100;
 }
 
-module.exports = {
+export default {
     data: new SlashCommandBuilder()
         .setName('pingcheck')
         .setDescription('Check if the bot is up and running!'),

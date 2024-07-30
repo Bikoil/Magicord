@@ -4,7 +4,10 @@
   "description": "An Open source discord bot",
   "main": "index.js",
   "scripts": {
-    "test": "console.log(\"Hello world\");"
+    "test": "console.log(\"Hello world\");",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "deploy": "node dist/deploy-commands.js"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
 // This determine's the user's info, its a part of discord.js guided to make commands
 const { SlashCommandBuilder } = require('discord.js');
 
-module.exports = {
+export default {
 	data: new SlashCommandBuilder()
 		.setName('user')
 		.setDescription('Provides information about the user.'),

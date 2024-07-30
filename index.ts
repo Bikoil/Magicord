@@ -1,7 +1,7 @@
 // Run this file to make the bot online via `node index.js`
 // Require the necessary discord.js classes
-const fs = require('node:fs');
-const path = require('node:path');
+import fs from 'node:fs';
+import path from 'node:path';
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
 

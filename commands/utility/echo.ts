@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 
-module.exports = {
+export default {
     data: new SlashCommandBuilder()
         .setName('echo')
         .setDescription('Make the bot say anything')
