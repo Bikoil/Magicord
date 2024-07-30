@@ -4,3 +4,7 @@ nohup.out
 colortest.css
 minikube-linux-amd64
 node_modules
+.vscode
+.env
+.env.local
+build
