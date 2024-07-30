@@ -178,7 +178,7 @@ set BOT_TOKEN=YourBotToken
 $ENV:BOT_TOKEN="REPLACE_THIS_WITH_YOUR_BOT_TOKEN"
 ```
 
--- **Linux/BSD/MacOS/GitBash**
+- **Linux/BSD/MacOS/GitBash**
 ```
 export BOT_TOKEN=YourBotToken
 ```
