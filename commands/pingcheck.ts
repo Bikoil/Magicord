@@ -1,10 +1,11 @@
-const { SlashCommandBuilder } = require('discord.js');
-const os = require('os');
-const fs = require('fs');
-const { execSync } = require('child_process');
+import { Discord, Slash } from 'discordx';
+import { CommandInteraction, SlashCommandBuilder } from 'discord.js';
+import * as fs from 'fs';
+import { execSync } from 'child_process';
+import * as os from 'os';
 
 // Function to get Linux distribution
-function getLinuxDistro() {
+function getLinuxDistro(): string {
     try {
         const osRelease = fs.readFileSync('/etc/os-release', 'utf8');
         const lines = osRelease.split('\n');
@@ -15,43 +16,43 @@ function getLinuxDistro() {
             }
         });
         return distro;
-    } catch (err) {
+    } catch {
         return 'Unknown Linux';
     }
 }
 
 // Function to get Android version
-function getAndroidVersion() {
+function getAndroidVersion(): string {
     try {
         const version = execSync('getprop ro.build.version.release', { encoding: 'utf8' }).trim();
         return `Android ${version}`;
-    } catch (err) {
+    } catch {
         return 'Unknown Android';
     }
 }
 
 // Function to get Windows version
-function getWindowsVersion() {
+function getWindowsVersion(): string {
     try {
         const version = execSync('ver', { encoding: 'utf8' }).trim();
         return version;
-    } catch (err) {
+    } catch {
         return 'Unknown Windows';
     }
 }
 
 // Function to check if running in Docker
-function isDocker() {
+function isDocker(): boolean {
     return fs.existsSync('/.dockerenv');
 }
 
 // Function to check if running in Kubernetes
-function isKubernetes() {
+function isKubernetes(): boolean {
     return process.env.KUBERNETES_SERVICE_HOST !== undefined;
 }
 
 // Function to get system details
-function getSystemDetails() {
+function getSystemDetails(): string {
     const platform = os.platform();
     let systemDetails = '';
     if (platform === 'linux') {
@@ -76,7 +77,7 @@ function getSystemDetails() {
 }
 
 // Function to get CPU usage
-function getCpuUsage() {
+function getCpuUsage(): number {
     const cpus = os.cpus();
     const idle = cpus.reduce((acc, cpu) => acc + cpu.times.idle, 0);
     const total = cpus.reduce((acc, cpu) => acc + cpu.times.user + cpu.times.nice + cpu.times.sys + cpu.times.idle + cpu.times.irq, 0);
@@ -84,22 +85,24 @@ function getCpuUsage() {
 }
 
 // Function to get memory usage
-function getMemoryUsage() {
+function getMemoryUsage(): number {
     const totalMem = os.totalmem();
     const freeMem = os.freemem();
     return ((totalMem - freeMem) / totalMem) * 100;
 }
 
-module.exports = {
-    data: new SlashCommandBuilder()
+@Discord()
+export class AppDiscord {
+    @Slash(new SlashCommandBuilder()
         .setName('pingcheck')
-        .setDescription('Check if the bot is up and running!'),
-    async execute(interaction) {
+        .setDescription('Check if the bot is up and running!')
+    )
+    async pingCheck(interaction: CommandInteraction): Promise<void> {
         const system = getSystemDetails();
         const cpuUsage = getCpuUsage().toFixed(2);
         const memoryUsage = getMemoryUsage().toFixed(2);
 
-        let message = `# The Bot Is Online!\n> Server is set up! The bot is up and running using \`node index.js\` currently running on ${system}\n> CPU Usage: ${cpuUsage}%\n> Memory Usage: ${memoryUsage}%`;
+        let message = `# The Bot Is Online!\n> Server is set up! The bot is up and running using \`npm run start\` currently running on ${system}\n> CPU Usage: ${cpuUsage}%\n> Memory Usage: ${memoryUsage}%`;
         
         if (isDocker()) {
             message = `# The Bot Is Online!\n> Server is set up! The bot is up and running in a Docker container currently running on ${system}\n> CPU Usage: ${cpuUsage}%\n> Memory Usage: ${memoryUsage}%`;
@@ -109,6 +112,6 @@ module.exports = {
             message = `# The Bot Is Online!\n> Server is set up! The bot is up and running in a Kubernetes pod currently running on ${system}\n> CPU Usage: ${cpuUsage}%\n> Memory Usage: ${memoryUsage}%`;
         }
 
-        await interaction.reply(message);
-    },
-};
+        await interaction.reply({ content: message });
+    }
+}
