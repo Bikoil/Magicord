@@ -43,7 +43,7 @@ __NOTE THAT MOST OF THESE FEATURES HAVE NOT BEEN IMPLEMENTED YET__
 
 # How to setup the bot
 > [!IMPORTANT]  
-> Before setting up the bot, you must have at least some javascript skill or are familiar with the language, do not open issues on learning javascript/typescript or "where do i begin from", please look at [Discord.js guide](https://discordjs.guide) and [Discordx guide](https://discordx.js.org/docs/discordx/getting-started/) for more information about discord typescript, you may also learn javascript at the [JavaScript website](https://www.javascript.com/) and typescript at [Typescript website](https://www.typescriptlang.org/docs/), Also, you may need to have some knowledge about the terminal and how to use it including bash and other shells.
+> Before setting up the bot, you must have at least some JavaScript skill or are familiar with the language, do not open issues on learning JavaScript/TypeScript or "where do I begin from", please look at [Discord.js guide](https://discordjs.guide) and [Discordx guide](https://discordx.js.org/docs/discordx/getting-started/) for more information about Discord TypeScript, you may also learn JavaScript at the [JavaScript website](https://www.javascript.com/) and TypeScript at [TypeScript website](https://www.typescriptlang.org/docs/), Also, you may need to have some knowledge about the terminal and how to use it including bash and other shells.
 > Please also Keep in mind this bot is not complete at all, and is still being worked on.
 
 
