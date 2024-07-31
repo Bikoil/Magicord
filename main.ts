@@ -3,6 +3,21 @@ import type { Interaction, Message } from "discord.js";
 import { IntentsBitField, ActivityType } from "discord.js"; // Import ActivityType
 import { Client } from "discordx";
 
+console.log(`$$\\      $$\\                     $$\\                                     $$\\ 
+$$$\\    $$$ |                    \\__|                                    $$ |
+$$$$\\  $$$$ | $$$$$\\\\   $$$$$\\\\  $$\\  $$$$$$$\\  $$$$$\\\\   $$$$$\\\\   $$$$$$$ |
+$$\\$$\\$$ $$ | \\____$$\\ $$  __$$\\ $$ |$$  _____|$$  __$$\\ $$  __$$\\ $$  __$$ |
+$$ \\$$$  $$ | $$$$$$$ |$$ /  $$ |$$ |$$ /      $$ /  $$ |$$ |  \\__|$$ /  $$ |
+$$ |\\$  /$$ |$$  __$$ |$$ |  $$ |$$ |$$ |      $$ |  $$ |$$ |      $$ |  $$ |
+$$ | \\_/ $$ |\\$$$$$$$ |\\$$$$$$$ |$$ |\\$$$$$$$\\ \\$$$$$$  |$$ |      \\$$$$$$$ |
+\\__|     \\__| \\_______| \\____$$ |\\__| \\_______| \\______/ \\__|       \\_______|
+                       $$\\   $$ |                                            
+                       \\$$$$$$  |                                            
+                        \\______/
+                        
+                        
+                        Always free, Always open source`);
+
 export const bot = new Client({
   // To use only guild command
   // botGuilds: [(client) => client.guilds.cache.map((guild) => guild.id)],

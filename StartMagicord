@@ -1,0 +1,4 @@
+#!/bin/sh
+export BOT_TOKEN=PlaceYourTokenHere
+npm run build
+npm run start
