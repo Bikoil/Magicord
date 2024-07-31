@@ -43,7 +43,7 @@ __NOTE THAT MOST OF THESE FEATURES HAVE NOT BEEN IMPLEMENTED YET__
 
 # How to setup the bot
 > [!IMPORTANT]  
-> Before setting up the bot, you must have at least some javascript skill or are familliar with the language, do not open issues on learning javascript/typescript or "where do i begin from", please look at [Discord.js guide](https://discordjs.guide) and [Discordx guide](https://discordx.js.org/docs/discordx/getting-started/) for more information about discord typescript, you may also learn javascript at the [JavaScript website](https://www.javascript.com/) and typescript at [Typescript website](https://www.typescriptlang.org/docs/), Also, you may need to have some knowledge about the terminal and how to use it including bash and other shells.
+> Before setting up the bot, you must have at least some javascript skill or are familiar with the language, do not open issues on learning javascript/typescript or "where do i begin from", please look at [Discord.js guide](https://discordjs.guide) and [Discordx guide](https://discordx.js.org/docs/discordx/getting-started/) for more information about discord typescript, you may also learn javascript at the [JavaScript website](https://www.javascript.com/) and typescript at [Typescript website](https://www.typescriptlang.org/docs/), Also, you may need to have some knowledge about the terminal and how to use it including bash and other shells.
 > Please also Keep in mind this bot is not complete at all, and is still being worked on.
 
 
@@ -175,11 +175,11 @@ Then run the following
 // For cmd
 set BOT_TOKEN=YourBotToken
 // For powershell
-$ENV:BOT_TOKEN="REPLACE_THIS_WITH_YOUR_BOT_TOKEN"
+$env:BOT_TOKEN="YourBotToken"
 ```
 
 - **Linux/BSD/MacOS/GitBash**
-```
+```sh
 export BOT_TOKEN=YourBotToken
 ```
 After this, you are all set! you just need to do the following to run the ot and make it online
@@ -192,7 +192,7 @@ cd <TheBotFolderName>
 
 - You will need to install all the dependencies
 ```bash
-npm install discors.js  discordx os fs typescript
+npm install discord.js  discordx os fs typescript
 ```
 
 - Then run 
