@@ -195,10 +195,6 @@ cd <TheBotFolderName>
 npm install discord.js  discordx os fs typescript
 ```
 
-- Then run 
-```bash
-npx create-discordx
-```
 - And finally...
 ```bash
 npm run build && npm run start
