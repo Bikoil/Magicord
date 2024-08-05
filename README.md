@@ -210,4 +210,4 @@ And viola! your bot is online, now you can go ahead and customize it all you wan
 > Soon...
 
 
-
+*Development Team: !!Cords!! - Currently not public.*
