@@ -37,17 +37,30 @@ export class MuteCommand {
             return;
         }
 
+        // Ensure guild is defined
+        if (!interaction.guild) {
+            await interaction.reply({
+                content: '> *Guild not found.*',
+                ephemeral: true
+            });
+            return;
+        }
+
         // Create or get the mute role
-        let muteRole = interaction.guild?.roles.cache.find(role => role.name === 'Muted');
+        let muteRole = interaction.guild.roles.cache.find(role => role.name === 'Muted');
         if (!muteRole) {
-            muteRole = await interaction.guild?.roles.create({
+            muteRole = await interaction.guild.roles.create({
                 name: 'Muted',
                 permissions: [],
                 reason: 'Mute role needed for muting users',
             });
+
             if (muteRole) {
-                const rolePosition = interaction.guild?.roles.cache.size - 1;
-                await muteRole.setPosition(rolePosition);
+                // Sort roles by position to find the highest one
+                const sortedRoles = interaction.guild.roles.cache.sort((a, b) => b.position - a.position).first();
+                const topRolePosition = sortedRoles ? sortedRoles.position - 1 : 0;
+
+                await muteRole.setPosition(topRolePosition);
             }
         }
 
