@@ -1,5 +1,5 @@
 import { Discord, Slash, SlashOption } from 'discordx';
-import { CommandInteraction, GuildMember, EmbedBuilder, ApplicationCommandOptionType, PermissionFlagsBits, Role } from 'discord.js';
+import { CommandInteraction, GuildMember, EmbedBuilder, ApplicationCommandOptionType, PermissionFlagsBits, TextChannel, NewsChannel, Permissions, ChannelType } from 'discord.js';
 
 @Discord()
 export class MuteCommand {
@@ -72,18 +72,47 @@ export class MuteCommand {
             return;
         }
 
-        // Add the mute role to the user
+        // Apply the mute role to the user
         await user.roles.add(muteRole);
+
+        // Update permissions for all text channels to ensure the mute role cannot send messages
+        const guild = interaction.guild;
+        if (guild) {
+            guild.channels.cache.forEach(async (channel) => {
+                if (channel.type === ChannelType.GuildText || channel.type === ChannelType.GuildNews) {
+                    const textChannel = channel as TextChannel | NewsChannel;
+                    await textChannel.permissionOverwrites.edit(muteRole, {
+                        SendMessages: false,
+                        SendMessagesInThreads: false,
+                        AddReactions: false,
+                    });
+                }
+            });
+        }
 
         // Handle the unmute after the time expires if specified
         if (time) {
             const ms = this.parseTime(time);
             if (ms) {
                 setTimeout(async () => {
-                    await user.roles.remove(muteRole);
-                    await interaction.channel?.send({
-                        content: `${user.user.tag} has been unmuted automatically.`,
-                    });
+                    if (guild) {
+                        await user.roles.remove(muteRole);
+                        await interaction.channel?.send({
+                            content: `${user.user.tag} has been unmuted automatically.`,
+                        });
+
+                        // Restore permissions for all text channels
+                        guild.channels.cache.forEach(async (channel) => {
+                            if (channel.type === ChannelType.GuildText || channel.type === ChannelType.GuildNews) {
+                                const textChannel = channel as TextChannel | NewsChannel;
+                                await textChannel.permissionOverwrites.edit(muteRole, {
+                                    SendMessages: null,
+                                    SendMessagesInThreads: null,
+                                    AddReactions: null,
+                                });
+                            }
+                        });
+                    }
                 }, ms);
             } else {
                 await interaction.reply({
