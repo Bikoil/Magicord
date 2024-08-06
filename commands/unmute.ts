@@ -41,7 +41,7 @@ export class UnmuteCommand {
         // Respond with confirmation embed
         const embed = new EmbedBuilder()
             .setColor('#00ff00')
-            .setTitle('<:Unmute:1138521731003322429> USER UNMUTED <:Unmute:1138521731003322429>')
+            .setTitle('🔊 USER UNMUTED 🔊')
             .setDescription(`${user.user.tag} has been unmuted.`)
             .addFields(
                 { name: 'Moderator', value: interaction.user.tag, inline: true }
