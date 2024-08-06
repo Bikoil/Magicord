@@ -125,8 +125,8 @@ export class MuteCommand {
 
         // Respond with confirmation embed
         const embed = new EmbedBuilder()
-            .setColor('#ff0000')
-            .setTitle('<:Mute:1138521731003322429> USER MUTED <:Mute:1138521731003322429>')
+            .setColor('#FFFF00')
+            .setTitle('<:MuteUser:1138519185757053008> USER MUTED <:MuteUser:1138519185757053008>')
             .setDescription(`${user.user.tag} has been muted.`)
             .addFields(
                 { name: 'Moderator', value: interaction.user.tag, inline: true },
