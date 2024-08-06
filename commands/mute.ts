@@ -135,7 +135,8 @@ export class MuteCommand {
             .setDescription(`${user.user.tag} has been muted.`)
             .addFields(
                 { name: 'Moderator', value: interaction.user.tag, inline: true },
-                { name: 'Reason', value: reason || 'No reason provided', inline: true }
+                { name: 'Reason', value: reason || 'No reason provided', inline: true },
+                { name: 'Time', value: time || 'No time provided', inline: true}
             )
             .setFooter({ text: `ID: ${user.id}` })
             .setTimestamp();
