@@ -1,8 +1,10 @@
 import { Discord, Slash, SlashOption } from 'discordx';
-import { CommandInteraction, GuildMember, EmbedBuilder, ApplicationCommandOptionType, PermissionFlagsBits, TextChannel, NewsChannel, Permissions, ChannelType } from 'discord.js';
+import { CommandInteraction, GuildMember, EmbedBuilder, ApplicationCommandOptionType, PermissionFlagsBits, TextChannel, NewsChannel, ChannelType } from 'discord.js';
 
 @Discord()
 export class MuteCommand {
+    private permissionsSet = new Set<string>(); // Store channel IDs where permissions have been set
+
     @Slash({
         name: 'mute',
         description: 'Mute a user in the server',
@@ -75,17 +77,20 @@ export class MuteCommand {
         // Apply the mute role to the user
         await user.roles.add(muteRole);
 
-        // Update permissions for all text channels to ensure the mute role cannot send messages
+        // Update permissions for all text channels if not already set
         const guild = interaction.guild;
         if (guild) {
             guild.channels.cache.forEach(async (channel) => {
-                if (channel.type === ChannelType.GuildText || channel.type === ChannelType.GuildNews) {
+                if ((channel.type === ChannelType.GuildText || channel.type === ChannelType.GuildNews) && !this.permissionsSet.has(channel.id)) {
                     const textChannel = channel as TextChannel | NewsChannel;
                     await textChannel.permissionOverwrites.edit(muteRole, {
                         SendMessages: false,
                         SendMessagesInThreads: false,
                         AddReactions: false,
                     });
+
+                    // Mark permissions as set for this channel
+                    this.permissionsSet.add(channel.id);
                 }
             });
         }
