@@ -98,7 +98,7 @@ export class MuteCommand {
                     if (guild) {
                         await user.roles.remove(muteRole);
                         await interaction.channel?.send({
-                            content: `${user.user.tag} has been unmuted automatically.`,
+                            content: `${user.user.username} **has been unmuted automatically.**`,
                         });
 
                         // Restore permissions for all text channels
