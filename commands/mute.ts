@@ -31,9 +31,9 @@ export class MuteCommand {
         interaction: CommandInteraction
     ): Promise<void> {
         // Check if the user has administrator permissions
-        if (!(interaction.member instanceof GuildMember) || !interaction.member.permissions.has(PermissionFlagsBits.ManageRoles)) {
+        if (!(interaction.member instanceof GuildMember) || !interaction.member.permissions.has(PermissionFlagsBits.ModerateMembers)) {
             await interaction.reply({
-                content: "> *You don't have permission to use this command `MISSING PERMISSIONS: MANAGE_ROLES`*",
+                content: "> *You don't have permission to use this command `MISSING PERMISSIONS: TIMEOUT_MEMBERS`*",
                 ephemeral: true
             });
             return;
