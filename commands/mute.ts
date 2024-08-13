@@ -1,5 +1,5 @@
 import { Discord, Slash, SlashOption } from 'discordx';
-import { CommandInteraction, GuildMember, EmbedBuilder, ApplicationCommandOptionType, PermissionFlagsBits, TextChannel, NewsChannel, ChannelType } from 'discord.js';
+import { CommandInteraction, GuildMember, EmbedBuilder, ApplicationCommandOptionType, PermissionFlagsBits, TextChannel, NewsChannel, ChannelType, Options } from 'discord.js';
 
 @Discord()
 export class MuteCommand {
@@ -103,7 +103,7 @@ export class MuteCommand {
                     if (guild) {
                         await user.roles.remove(muteRole);
                         await interaction.channel?.send({
-                            content: `${user.user.username} **has been unmuted automatically.**`,
+                            content: `${user.user.username} **has been unmuted automatically, After a ${time} mute.**`,
                         });
 
                         // Restore permissions for all text channels
