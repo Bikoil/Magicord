@@ -27,7 +27,8 @@ export class UptimeCommand {
     const projectFolder = path.resolve(__dirname, "../../");
     const { lastChangeTime, timeZone } = await this.getLastModifiedTime(projectFolder);
 
-    await interaction.reply(
+    await interaction.deferReply();
+    await interaction.editReply(
       `> 🕒 **Uptime:** ${days}d ${hours}h ${minutes}m ${seconds}s\n` +
       `> 📅 **Last change to the source code:** ${lastChangeTime} \`(${timeZone})\``
     );
