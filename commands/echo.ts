@@ -27,6 +27,7 @@ export class EchoCommand {
         }
 
         // User has administrator permissions, proceed with the command execution
-        await interaction.reply(message);
+        await interaction.deferReply();
+        await interaction.editReply(message);
     }
 }
