@@ -140,8 +140,8 @@ export class MuteCommand {
             )
             .setFooter({ text: `ID: ${user.id}` })
             .setTimestamp();
-
-        await interaction.reply({ embeds: [embed] });
+        await interaction.deferReply();
+        await interaction.editReply({ embeds: [embed] });
     }
 
     private parseTime(time: string): number | null {
