@@ -192,7 +192,7 @@ cd <TheBotFolderName>
 
 - You will need to install all the dependencies
 ```bash
-npm install discord.js  discordx os fs typescript
+npm install discord.js  discordx os fs typescript date-fns-tz --save-dev @types/fs-extra
 ```
 
 - And finally...
