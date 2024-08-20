@@ -48,7 +48,7 @@ export class UnmuteCommand {
             )
             .setFooter({ text: `ID: ${user.id}` })
             .setTimestamp();
-
-        await interaction.reply({ embeds: [embed] });
+        await interaction.deferReply();
+        await interaction.editReply({ embeds: [embed] });
     }
 }
