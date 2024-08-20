@@ -28,8 +28,8 @@ export class UptimeCommand {
     const { lastChangeTime, timeZone } = await this.getLastModifiedTime(projectFolder);
 
     await interaction.reply(
-      `🕒 **Uptime:** ${days}d ${hours}h ${minutes}m ${seconds}s\n` +
-      `📅 **Last change to the source code:** ${lastChangeTime} (${timeZone})`
+      `> 🕒 **Uptime:** ${days}d ${hours}h ${minutes}m ${seconds}s\n` +
+      `> 📅 **Last change to the source code:** ${lastChangeTime} \`(${timeZone})\``
     );
   }
 
