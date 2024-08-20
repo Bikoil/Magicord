@@ -50,8 +50,8 @@ export class UptimeCommand {
       }
     }
 
-    const timeZone = 'Africa/Cairo'
-    const lastChangeTime = format(new Date(latestTime), 'yyyy-MM-dd HH:mm:ssXXX', { timeZone });
+    const timeZone = 'Africa/Cairo'; 
+    const lastChangeTime = format(new Date(latestTime), 'MMM dd, yyyy hh:mm:ss a', { timeZone });
 
     return { lastChangeTime, timeZone };
   }
