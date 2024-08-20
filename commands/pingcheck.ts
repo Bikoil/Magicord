@@ -111,7 +111,7 @@ export class AppDiscord {
         if (isKubernetes()) {
             message = `# The Bot Is Online!\n> Server is set up! The bot is up and running in a Kubernetes pod currently running on ${system}\n> CPU Usage: ${cpuUsage}%\n> Memory Usage: ${memoryUsage}%`;
         }
-
-        await interaction.reply({ content: message });
+        await interaction.deferReply();
+        await interaction.editReply({ content: message });
     }
 }

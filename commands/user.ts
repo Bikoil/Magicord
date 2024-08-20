@@ -13,7 +13,7 @@ export class UserDiscord {
 
         const username = interaction.user.username;
         const joinedAt = member.joinedAt?.toLocaleDateString() || 'Unknown';
-
-        await interaction.reply(`This command was run by ${username}, who joined on ${joinedAt}.`);
+        await interaction.deferReply();
+        await interaction.editReply(`This command was run by ${username}, who joined on ${joinedAt}.`);
     }
 }
