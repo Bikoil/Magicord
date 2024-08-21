@@ -37,9 +37,12 @@
 
 __NOTE THAT MOST OF THESE FEATURES HAVE NOT BEEN IMPLEMENTED YET__
 
-// To add the bot, click [here]( https://discord.com/api/oauth2/authorize?client_id=1138504372817506344&permissions=8&scope=bot) //
+[![Get Magicord](https://github.com/Bikoil/Magicord/blob/main/Magicord.png)](https://discord.com/api/oauth2/authorize?client_id=1138504372817506344&permissions=8&scope=bot)
+
 
 ***
+***
+
 
 # How to setup the bot
 > [!IMPORTANT]  
