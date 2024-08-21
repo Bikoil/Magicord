@@ -37,9 +37,12 @@
 
 __NOTE THAT MOST OF THESE FEATURES HAVE NOT BEEN IMPLEMENTED YET__
 
-// To add the bot, click [here]( https://discord.com/api/oauth2/authorize?client_id=1138504372817506344&permissions=8&scope=bot) //
+[![Get Magicord](https://raw.githubusercontent.com/Bikoil/Magicord/Magicord-RollRelease/AddMagicord.png)](https://discord.com/api/oauth2/authorize?client_id=1138504372817506344&permissions=8&scope=bot)
+
 
 ***
+***
+
 
 # How to setup the bot
 > [!IMPORTANT]  
@@ -192,7 +195,7 @@ cd <TheBotFolderName>
 
 - You will need to install all the dependencies
 ```bash
-npm install discord.js  discordx os fs typescript
+npm install discord.js  discordx os fs typescript date-fns-tz --save-dev @types/fs-extra
 ```
 
 - And finally...
