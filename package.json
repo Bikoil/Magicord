@@ -1,8 +1,8 @@
 {
-  "name": "magicord",
-  "version": "1.0.0",
-  "private": true,
-  "license": "BSD-2-Clause",
+  "name": "Magicord",
+  "version": "0.6",
+  "private": false,
+  "license": "BSD-3-Clause",
   "type": "module",
   "main": "build/main.js",
   "scripts": {
