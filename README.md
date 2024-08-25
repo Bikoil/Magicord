@@ -10,7 +10,7 @@
   
 <p align="center">
 <img src="https://img.shields.io/badge/Discord.js-Bot-Bot?style=for-the-badge"> 
-<img src="https://img.shields.io/github/commit-activity/w/Bikoil/Magicord/main?style=for-the-badge">  
+<img src="https://img.shields.io/github/commit-activity/m/Bikoil/Magicord?style=for-the-badge"> 
 <img src="https://img.shields.io/badge/WorkInProgress-JS?style=for-the-badge">
 
 </p>
@@ -36,6 +36,9 @@
 - Silly commands (cuz why not)
 
 __NOTE THAT MOST OF THESE FEATURES HAVE NOT BEEN IMPLEMENTED YET__
+
+[![Get Magicord](https://raw.githubusercontent.com/Bikoil/Magicord/main/AddMagicord.png)](https://discord.com/api/oauth2/authorize?client_id=1138504372817506344&permissions=8&scope=bot)
+    
 # Commands
 - Here is the list of current commands of magicord!
 
@@ -52,9 +55,6 @@ __NOTE THAT MOST OF THESE FEATURES HAVE NOT BEEN IMPLEMENTED YET__
 | Uptime       | `commands/uptime.ts`         | Checks how the bot has been active for and when the latest change of the source code was done | `@everyone`       |
 | User         | `commands/user.ts`           | Lists information about the user                                         | `@everyone`       |
 | Stats        | `commands/stats.ts`          | Checks stats about the bot and the system that the bot is being hosted on | `@everyone`       |
-
-
-[![Get Magicord](https://raw.githubusercontent.com/Bikoil/Magicord/main/AddMagicord.png)](https://discord.com/api/oauth2/authorize?client_id=1138504372817506344&permissions=8&scope=bot)
 
 
 ***
