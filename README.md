@@ -10,7 +10,7 @@
   
 <p align="center">
 <img src="https://img.shields.io/badge/Discord.js-Bot-Bot?style=for-the-badge"> 
-<img src="https://img.shields.io/github/commit-activity/w/Bikoil/Magicord/main?style=for-the-badge">  
+<img src="https://img.shields.io/github/commit-activity/m/Bikoil/Magicord?style=for-the-badge"> 
 <img src="https://img.shields.io/badge/WorkInProgress-JS?style=for-the-badge">
 
 </p>
@@ -37,7 +37,24 @@
 
 __NOTE THAT MOST OF THESE FEATURES HAVE NOT BEEN IMPLEMENTED YET__
 
-[![Get Magicord](https://raw.githubusercontent.com/Bikoil/Magicord/Magicord-RollRelease/AddMagicord.png)](https://discord.com/api/oauth2/authorize?client_id=1138504372817506344&permissions=8&scope=bot)
+[![Get Magicord](https://raw.githubusercontent.com/Bikoil/Magicord/main/AddMagicord.png)](https://discord.com/api/oauth2/authorize?client_id=1138504372817506344&permissions=8&scope=bot)
+    
+# Commands
+- Here is the list of current commands of magicord!
+
+
+| Command      | File                        | Description                                                             | Permissions       |
+|--------------|-----------------------------|-------------------------------------------------------------------------|-------------------|
+| Ban          | `commands/ban.ts`            | Bans a member from the server                                            | `BAN_MEMBERS`     |
+| Echo         | `commands/echo.ts`           | Makes the bot say anything you want it to say                            | `ADMINISTRATOR`   |
+| Embed Message | `commands/embedmsg.ts`      | Makes the bot send an embed message                                      | `ADMINISTRATOR`   |
+| Kick         | `commands/kick.ts`           | Kicks a member from the server                                           | `KICK_MEMBERS`    |
+| Mute         | `commands/mute.ts`           | Mutes a member by giving the member MUTED role and prevents them from talking anywhere | `TIMEOUT_MEMBERS` |
+| Unmute       | `commands/unmute.ts`         | Unmutes a user by removing muted role from them                          | `TIMEOUT_MEMBERS` |
+| Ping Check   | `commands/pingcheck.ts`      | Checks if the bot is online and gives RAM and CPU usage                   | `@everyone`       |
+| Uptime       | `commands/uptime.ts`         | Checks how the bot has been active for and when the latest change of the source code was done | `@everyone`       |
+| User         | `commands/user.ts`           | Lists information about the user                                         | `@everyone`       |
+| Stats        | `commands/stats.ts`          | Checks stats about the bot and the system that the bot is being hosted on | `@everyone`       |
 
 
 ***
