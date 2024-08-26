@@ -96,6 +96,7 @@ export class RalsayCommand {
     ): Promise<void> {
         const asciiArt = generateRalsay(text);
 	
+	await interaction.deferReply();
         await interaction.editReply("```" + asciiArt + "```");
     }
 }
