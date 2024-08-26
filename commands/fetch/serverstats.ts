@@ -34,6 +34,7 @@ export class ServerStats {
     
 
     // Respond with the collected stats
+    await interaction.deferReply();
     await interaction.editReply(
       `**Server Statistics:**\n` +
       `> Total Members: ${totalMembers}\n` +
