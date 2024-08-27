@@ -32,7 +32,7 @@ function generateRalsay(text: string): string {
     // Define the ASCII art
     const art = `
         -^-
-    _/\\/\\  \\/\\_
+    _/\\/\  \\/\\_
    (____ ))____)
     / -     - \\
    / ( ^)-(^ ) \\
@@ -40,7 +40,7 @@ function generateRalsay(text: string): string {
   \\(-    _-  __)/
     \\-  -__---/
     /  / V \\   \\
-   /__\\/   /    \\
+   /  \\   /    \\
   =      V       =
 _=_=              _=_
   -=---______---=-
