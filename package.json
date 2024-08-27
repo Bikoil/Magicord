@@ -20,7 +20,8 @@
     "fs-extra": "^11.2.0",
     "loader": "^2.1.1",
     "os": "^0.1.2",
-    "reflect-metadata": "^0.2.2"
+    "reflect-metadata": "^0.2.2",
+    "typescript-language-server": "^4.3.3"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
