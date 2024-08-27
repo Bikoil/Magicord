@@ -90,8 +90,11 @@ export class RalsayCommand {
 
     @Slash({ name: "ralsay", description:"Make ralsei from deltarune say anything!" })
     async ralsay(
-        @SlashOption({ name: "text", type: ApplicationCommandOptionType.String, description: "The text for ralsei to say" })
+        @SlashOption({ name: "text", 
+        type: ApplicationCommandOptionType.String, 
+        description: "The text for ralsei to say" })
         text: string,
+        required: true,
         interaction: CommandInteraction
     ): Promise<void> {
         const asciiArt = generateRalsay(text);
