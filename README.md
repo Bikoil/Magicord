@@ -62,7 +62,7 @@ __NOTE THAT MOST OF THESE FEATURES HAVE NOT BEEN IMPLEMENTED YET__
 :heart: Contributing is heavily apperciated in this project, as of right now, only 1 dev (me) is working on this project, so helping in any way possible is very appreciated, thanks! :heart:
 
 ## Note for contributing
-DO NOT open pull requests in the `main` branch, any pull request done there will need to be moved to the [Magicord-RollRelease](https://github.com/Bikoil/Magicord/tree/Magicord-RollRelease), always open pull requests there.
+DO NOT open pull requests in the `main` branch, any pull request done there will need to be moved to the [Magicord-RollRelease](https://github.com/Bikoil/Magicord/tree/Magicord-RollRelease) branch, always open pull requests there.
 
 ***
 ***
