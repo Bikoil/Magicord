@@ -88,18 +88,20 @@ _=_=              _=_
 @Discord()
 export class RalsayCommand {
 
-    @Slash({ name: "ralsay", description:"Make ralsei from deltarune say anything!" })
+    @Slash({ name: "ralsay", description: "Make Ralsei from Deltarune say anything!" })
     async ralsay(
-        @SlashOption({ name: "text", 
-        type: ApplicationCommandOptionType.String, 
-        description: "The text for ralsei to say" })
+        @SlashOption({
+            name: "text", 
+            type: ApplicationCommandOptionType.String, 
+            description: "The text for Ralsei to say", 
+            required: true 
+        })
         text: string,
-        required: true,
         interaction: CommandInteraction
     ): Promise<void> {
         const asciiArt = generateRalsay(text);
-	
-	await interaction.deferReply();
+        
+        await interaction.deferReply();
         await interaction.editReply("```" + asciiArt + "```");
     }
 }
