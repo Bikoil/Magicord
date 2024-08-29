@@ -42,20 +42,21 @@ __NOTE THAT MOST OF THESE FEATURES HAVE NOT BEEN IMPLEMENTED YET__
 # Commands
 - Here is the list of current commands of magicord!
 
-| Command      | File                        | Description                                                                                   | Permissions       |
-|--------------|-----------------------------|-----------------------------------------------------------------------------------------------|-------------------|
-| Ban          | `commands/ban.ts`            | Bans a member from the server                                                                  | `BAN_MEMBERS`     |
-| Echo         | `commands/echo.ts`           | Makes the bot say anything you want it to say                                                  | `ADMINISTRATOR`   |
-| Embed Message| `commands/embedmsg.ts`       | Makes the bot send an embed message                                                            | `ADMINISTRATOR`   |
-| Kick         | `commands/kick.ts`           | Kicks a member from the server                                                                 | `KICK_MEMBERS`    |
-| Mute         | `commands/mute.ts`           | Mutes a member by giving the member MUTED role and prevents them from talking anywhere         | `TIMEOUT_MEMBERS` |
-| Unmute       | `commands/unmute.ts`         | Unmutes a user by removing muted role from them                                                | `TIMEOUT_MEMBERS` |
-| Ping Check   | `commands/pingcheck.ts`      | Checks if the bot is online and gives RAM and CPU usage                                        | `@everyone`       |
-| Uptime       | `commands/uptime.ts`         | Checks how long the bot has been active and when the latest change to the source code was made | `@everyone`       |
-| User         | `commands/user.ts`           | Lists information about the user                                                               | `@everyone`       |
-| Stats        | `commands/stats.ts`          | Checks stats about the bot and the system that the bot is being hosted on                      | `@everyone`       |
-| Ralsay       | `commands/ralsay.ts`         | Sends ASCII art of Ralsei saying text                                                          | `@everyone`       |
-| Server Stats | `commands/serverstats.ts`    | Checks stats of the server the bot is currently in                                             | `@everyone`       |
+| Command      | File                                 | Description                                                                 | Permissions       |
+|--------------|--------------------------------------|-----------------------------------------------------------------------------|-------------------|
+| Ban          | `commands/moderation/ban.ts`         | Bans a member from the server                                                | `BAN_MEMBERS`     |
+| Echo         | `commands/utils/echo.ts`             | Makes the bot say anything you want it to say                                | `ADMINISTRATOR`   |
+| Embed Message| `commands/utils/embedmsg.ts`         | Makes the bot send an embed message                                          | `ADMINISTRATOR`   |
+| Kick         | `commands/moderation/kick.ts`        | Kicks a member from the server                                               | `KICK_MEMBERS`    |
+| Mute         | `commands/moderation/mute.ts`        | Mutes a member by giving them the MUTED role and prevents them from talking anywhere | `TIMEOUT_MEMBERS` |
+| Unmute       | `commands/moderation/unmute.ts`      | Unmutes a user by removing the muted role from them                          | `TIMEOUT_MEMBERS` |
+| Ping Check   | `commands/utils/pingcheck.ts`        | Checks if the bot is online and gives RAM and CPU usage                      | `@everyone`       |
+| Uptime       | `commands/fetch/uptime.ts`           | Checks how long the bot has been active and when the latest source code change was made | `@everyone`  |
+| User         | `commands/fetch/user.ts`             | Lists information about the user                                             | `@everyone`       |
+| Stats        | `commands/fetch/stats.ts`            | Checks stats about the bot and the system that the bot is being hosted on    | `@everyone`       |
+| Ralsay       | `commands/fun/ralsay.ts`             | Sends ASCII art of Ralsei saying text                                        | `@everyone`       |
+| Server Stats | `commands/fetch/serverstats.ts`      | Checks stats of the server the bot is currently in                           | `@everyone`       |
+
 
 # Contributing
 
