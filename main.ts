@@ -63,12 +63,25 @@ bot.once("ready", async () => {
   console.log("Bot started");
 });
 
-bot.on("interactionCreate", (interaction: Interaction) => {
-  bot.executeInteraction(interaction);
+bot.on("interactionCreate", async (interaction: Interaction) => {
+  try {
+    await bot.executeInteraction(interaction);
+  } catch (error) {
+    const err = error as { code?: number };
+    if (err.code === 10062) {
+      console.warn("Unknown interaction detected, possibly expired:", err);
+    } else {
+      console.error("Error handling interaction:", err);
+    }
+  }
 });
 
-bot.on("messageCreate", (message: Message) => {
-  void bot.executeCommand(message);
+bot.on("messageCreate", async (message: Message) => {
+  try {
+    await bot.executeCommand(message);
+  } catch (error) {
+    console.error("Error handling message:", error);
+  }
 });
 
 async function run() {
@@ -87,4 +100,14 @@ async function run() {
   await bot.login(process.env.BOT_TOKEN);
 }
 
+// Global error handling
+process.on("unhandledRejection", (reason, promise) => {
+  console.error("Unhandled Rejection at:", promise, "reason:", reason);
+});
+
+process.on("uncaughtException", (error) => {
+  console.error("Uncaught Exception:", error);
+});
+
 void run();
+
