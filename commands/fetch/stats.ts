@@ -2,7 +2,6 @@ import { Discord, Slash } from 'discordx';
 import { CommandInteraction, SlashCommandBuilder } from 'discord.js';
 import * as os from 'os';
 import * as fs from 'fs';
-import * as path from 'path';
 import * as process from 'process';
 import { execSync } from 'child_process';
 
