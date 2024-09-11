@@ -102,9 +102,12 @@ export class MuteCommand {
                 setTimeout(async () => {
                     if (guild) {
                         await user.roles.remove(muteRole);
-                        await interaction.channel?.send({
+                        if (interaction.channel?.type === ChannelType.GuildText) {
+                            const textChannel = interaction.channel as TextChannel | NewsChannel;
+                            await textChannel.send({
                             content: `${user.user.username} **has been unmuted automatically, After a ${time} mute.**`,
                         });
+                    }
 
                         // Restore permissions for all text channels
                         guild.channels.cache.forEach(async (channel) => {

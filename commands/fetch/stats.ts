@@ -2,6 +2,7 @@ import { Discord, Slash } from 'discordx';
 import { CommandInteraction, SlashCommandBuilder } from 'discord.js';
 import * as os from 'os';
 import * as fs from 'fs';
+import * as path from 'path';
 import * as process from 'process';
 import { execSync } from 'child_process';
 
@@ -83,10 +84,18 @@ function getUser(): string {
 }
 
 // Function to get the number of commands
-function getCommandCount(): number {
-    // This would require tracking commands in your bot; for now, let's assume a fixed number
-    return 10; // Replace with actual command count logic
+function getCommandCount(directory: string): number {
+    try {
+        return fs.readdirSync(directory)
+            .filter(file => path.extname(file) === '.ts').length;
+    } catch (error) {
+        console.error(`Error reading directory: ${directory}`, error);
+    }
+    return 0; 
+
 }
+const commandsDirectory = path.join(__dirname, '../..', 'commands');
+const tsFilesCount = getCommandCount(commandsDirectory);
 
 @Discord()
 export class AppDiscord {
@@ -100,7 +109,7 @@ export class AppDiscord {
         const memoryUsage = getMemoryUsage();
         const system = getSystemDetails();
         const user = getUser();
-        const commandCount = getCommandCount();
+        const commandCount = getCommandCount(commandsDirectory);
         const cpuType = getCpuType();
 
         const message = `**Bot Statistics**\n` +
