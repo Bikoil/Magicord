@@ -1,5 +1,4 @@
 #!/bin/sh
-cd Magicord
 echo "Checking for updates using git..."
 git pull 
 echo "Exporting BOT_TOKEN variable..."
