@@ -7,4 +7,6 @@ node_modules
 .vscode
 .env
 .env.local
+start
+start.bat
 build

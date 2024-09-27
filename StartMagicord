@@ -1,4 +1,9 @@
 #!/bin/sh
+echo "Checking for updates using git..."
+git pull 
+echo "Exporting BOT_TOKEN variable..."
 export BOT_TOKEN=PlaceYourTokenHere
+echo "Compiling Typescript to Javascript..."
 npm run build
+echo "Starting the bot..."
 npm run start

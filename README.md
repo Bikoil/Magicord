@@ -63,7 +63,7 @@ __NOTE THAT MOST OF THESE FEATURES HAVE NOT BEEN IMPLEMENTED YET__
 :heart: Contributing is heavily appreciated in this project, as of right now, only 1 dev (me) is working on this project, so helping in any way possible is very appreciated, thanks! :heart:
 
 ## Note for contributing
-DO NOT open pull requests in the `main` branch, any pull request done there will need to be moved to the [Magicord-RollRelease](https://github.com/Bikoil/Magicord/tree/Magicord-RollRelease) branch, always open pull requests there.
+Do not open pull requests in the `main` branch, any pull request done there will need to be moved to the [Magicord-RollRelease](https://github.com/Bikoil/Magicord/tree/Magicord-RollRelease) branch, always open pull requests there.
 
 ***
 ***
@@ -179,25 +179,9 @@ Now, your bot repository is setup in your device, you are missing 2 more steps b
 > [!IMPORTANT]
 > NEVER ever give your bot token to absolutely ANYONE, giving your bot token to anyone or leaking it can cause **catostrophic events** to your bot and the servers it is inside, leaking it essentially gives the person access to the bot and do absolutely anything you want, this is fully YOUR responsibility and you should take care of it.
 
-Now, you can either keep going with the terminal to setup everything if you are used to the terminal, you will have to make a file in the bot folder
-
 - Go to your bot folder
-- Make a file named `config.json`
-> [!IMPORTANT]
-> If you are hosting your bot on a public git platform (like github or gitlab) then DO NOT delete the `.gitignore` file as it prevents your token from being leaked and stops config.json from appearing on the public git repository
+- Then run the following
 
-- Copy this to the `config.json`
-```json
-{
-	"token": "<YourBotToken>",
-	"clientId": "YourBot'sClientID",
-	"guildId": "YourServerID"
-}
-```
-> [!IMPORTANT]
-> This step may be changed soon in the future.
-
-Then run the following
 - **Windows**
 ```cmd
 // For cmd
@@ -229,6 +213,72 @@ npm run build && npm run start
 ```
 
 And viola! your bot is online, now you can go ahead and customize it all you want
+
+You can make a startup script for your bot if you do not want to deal with running multiple commands to start up the bot.
+
+
+
+## Steps for Unix-like OS's/Git Bash
+- Make script called `start`
+- Copy the contents of the `StartMagicord` script into the `start` script
+- This should be the contents of the `start` script
+```sh
+#!/bin/sh
+echo "Checking for updates using git..."
+git pull 
+echo "Exporting BOT_TOKEN variable..."
+export BOT_TOKEN=PlaceYourTokenHere
+echo "Compiling Typescript to Javascript..."
+npm run build
+echo "Starting the bot..."
+npm run start
+```
+If you do not want the bot to auto check for updates and update, then you can remove `git pull` from the script
+
+- Replace `PlaceYourTokenHere` with your actual bot token
+
+> [!IMPORTANT]
+> If you are hosting your bot on a public git platform (like github or gitlab) then DO NOT delete the `.gitignore` file as it prevents your token from being leaked and stops the `start` script from appearing on the public git repository.
+
+- Make the file executable.
+```sh
+chmod +x start
+```
+- Then, your bot should start upon running the script
+```sh
+./start
+```
+
+## Steps for Windows:
+
+- Make a script named `start.bat` in your bot directory
+- Copy this into the script
+```bat
+@echo off
+echo Checking for updates using git...
+git pull
+
+echo Exporting BOT_TOKEN variable...
+set BOT_TOKEN=PlaceYourTokenHere
+
+echo Compiling Typescript to Javascript...
+npm run build
+
+echo Starting the bot...
+npm run start
+```
+
+If you do not want the bot to auto check for updates and update, then you can remove `git pull` from the script
+
+- Replace `PlaceYourTokenHere` with your actual bot token
+
+> [!IMPORTANT]
+> If you are hosting your bot on a public git platform (like github or gitlab) then DO NOT delete the `.gitignore` file as it prevents your token from being leaked and stops the `start.bat` script from appearing on the public git repository.
+
+- Then, your bot should start upon running the script
+```sh
+./start.bat
+```
 
 # Running through Docker and Kubernetes
 > Soon...
